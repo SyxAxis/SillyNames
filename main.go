@@ -33,11 +33,17 @@ func main() {
 	clfPrefixHonorific := flag.Bool("h", false, "Prefix honorific")
 	flag.Parse()
 
+	runNameGenerator(*clfNameType, *clfNumNames, *clfPrefixHonorific)
+
+}
+
+func runNameGenerator(clfNameType string, clfNumNames int, clfPrefixHonorific bool) {
+
 	filePrefix := ""
 	fileNumParts := 1
 	fileSpaces := false
 
-	switch *clfNameType {
+	switch clfNameType {
 	case "acme":
 		filePrefix = "acme_names_part"
 		fileNumParts = 2
@@ -80,8 +86,7 @@ func main() {
 		fileSpaces = true
 	}
 
-	generateRandomNames(folderpath+filePrefix, fileNumParts, fileSpaces, *clfNumNames, *clfPrefixHonorific)
-
+	generateRandomNames(folderpath+filePrefix, fileNumParts, fileSpaces, clfNumNames, clfPrefixHonorific)
 }
 
 func generateRandomNames(filenamePrefix string, numFiles int, insSpace bool, numNames int, addHonorific bool) {
