@@ -1,5 +1,9 @@
 # SillyNames
-A silly names generator written in Go
+A silly names generator written in Go.
+
+Had these lists of names for years and needed something to practice some Go coding on, so wrote this one evening for a laugh.
+
+__NOTE: This uses Go v1.16 feature "go:embed"__
 
 Build and execute
 
